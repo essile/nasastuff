@@ -13,7 +13,7 @@ class Datainfo extends Component {
         return (
             <div>
                 <MediaQuery query='(max-width: 1024px)'>
-                    {/* Narrow width - the image as big as possibles */}
+                    {/* Narrow screen - the image as big as possibles */}
                     <MediaQuery query='(max-width: 600px)' >
                         <Card>
                             <CardBody>
@@ -31,6 +31,7 @@ class Datainfo extends Component {
                         </Card>
                     </MediaQuery>
                     <MediaQuery query='(min-width: 601px)'>
+                    {/* Wider screen - lock the image size */}
                         <Card>
                             <CardBody>
                                 <CardTitle>
@@ -40,50 +41,35 @@ class Datainfo extends Component {
                                     <small className="text-muted">copyright: {infoToday.copyright}</small>
                                 </CardText>
                             </CardBody>
-                            <img width="519px" src={infoToday.url} alt={infoToday.title} />
+                            <img width="75%" src={infoToday.url} alt={infoToday.title} />
                             <CardBody>
                                 <CardText>{infoToday.explanation}</CardText>
                             </CardBody>
                         </Card>
                     </MediaQuery>
                 </MediaQuery>
+                {/* Big screen - reponsive image, text on the side */}
                 <MediaQuery query='(min-width: 1025px)'>
-                    <MediaQuery query='(max-width: 1224px)'>
+                    <div>
                         <Card>
                             <CardBody>
-                                <CardTitle>
-                                    {infoToday.title}
-                                </CardTitle>
-                                <CardText>
-                                    <small className="text-muted">copyright: {infoToday.copyright}</small>
-                                </CardText>
-                            </CardBody>
-                            <CardBody>
-                                <Row>
-                                    <Col xm={{ size: "auto", order: 4, offset: 0 }}><img width="100%" src={infoToday.url} alt={infoToday.title} /></Col>
-                                    <Col xm="4"><CardText>{infoToday.explanation}</CardText></Col>
+                                <Row >
+                                    <Col xs="6"><img width="100%" src={infoToday.url} alt={infoToday.title} /></Col>
+                                    <Col xs="6" height="400px">
+                                        <CardBody>
+                                            <CardTitle>
+                                                {infoToday.title}
+                                            </CardTitle>
+                                            <CardText>
+                                                <small className="text-muted">copyright: {infoToday.copyright}</small>
+                                            </CardText>
+                                        </CardBody>
+                                        <CardText>{infoToday.explanation}</CardText>
+                                    </Col>
                                 </Row>
                             </CardBody>
                         </Card>
-                    </MediaQuery>
-                    <MediaQuery query='(min-width: 1225px)'>
-                        <Card>
-                            <CardBody>
-                                <CardTitle>
-                                    {infoToday.title}
-                                </CardTitle>
-                                <CardText>
-                                    <small className="text-muted">copyright: {infoToday.copyright}</small>
-                                </CardText>
-                            </CardBody>
-                            <CardBody>
-                                <Row>
-                                    <Col xs="8"><img width="100%" src={infoToday.url} alt={infoToday.title} /></Col>
-                                    <Col xs="4"><CardText>{infoToday.explanation}</CardText></Col>
-                                </Row>
-                            </CardBody>
-                        </Card>
-                    </MediaQuery>
+                    </div>
                 </MediaQuery>
             </div>
         );

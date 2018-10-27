@@ -1,7 +1,8 @@
 const TodaysPhotoUrl = "https://api.nasa.gov/planetary/apod?api_key=mJBcNFN2GFabGmwER594dcB2Q1aucasNGUsdvo9t";
 
 export function TodayfromNasa(callback) {
-    fetch(TodaysPhotoUrl+"&date=2018-10-25")
+    fetch(TodaysPhotoUrl+"&date=2018-01-02")
+    // fetch(TodaysPhotoUrl)
     .then(function (response) {
         if (!response.ok) {
             const errorviesti = {
