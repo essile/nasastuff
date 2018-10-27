@@ -38,8 +38,9 @@ class SearchForm extends Component {
     render() {
         return (
             <div>
-                <input id="ddate" min="1995-06-16" max={this.state.today} type="date" onChange={this.changeDate} /><br />
+                <input id="ddate" min="1995-06-16" max={this.state.today} type="date" onChange={this.changeDate} />
                 <input type="button" value="Search" onClick={this.searchDate} />
+                <hr/>
                 <SearchResults dataFromNasa={this.state.data}/>
             </div>
         );
