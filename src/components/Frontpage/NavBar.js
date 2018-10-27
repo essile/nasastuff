@@ -35,6 +35,9 @@ class NavBar extends Component {
                         <NavItem>
                             <NavLink href="/photo-today/">Today's photo</NavLink>
                         </NavItem>
+                        <NavItem>
+                            <NavLink href="/archived-photos/">Search photos</NavLink>
+                        </NavItem>
                     </Nav>
                 </Collapse>
             </Navbar>
