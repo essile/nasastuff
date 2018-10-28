@@ -3,6 +3,7 @@ import LoginBox from './LoginBox';
 import RegisterBox from './RegisterBox';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
+import { newRegisteredUser } from '../../ServiceClient';
 
 class MemberArea extends Component {
 
@@ -11,7 +12,7 @@ class MemberArea extends Component {
 
         this.toggle = this.toggle.bind(this);
         this.state = {
-            activeTab: '1'
+            activeTab: '2'
         };
 
     }
@@ -22,6 +23,13 @@ class MemberArea extends Component {
                 activeTab: tab
             });
         }
+    }
+
+    createUser = (u) => {
+        console.log("sending to database");
+        newRegisteredUser(u, function () {
+            console.log("done");
+        }.bind(this));
     }
 
     render() {
@@ -60,7 +68,7 @@ class MemberArea extends Component {
                     <TabPane tabId="2">
                         <Row>
                             <Col sm="12">
-                                <RegisterBox />
+                                <RegisterBox newUser={this.createUser}/>
                             </Col>
                         </Row>
                     </TabPane>
