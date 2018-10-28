@@ -20,7 +20,7 @@ export function TodayfromNasa(callback) {
 }
 
 export function ArchivedfromNasa(date, callback) {
-    console.log("haloo");
+    console.log("etsiskellään kuvaa");
     // fetch(TodaysPhotoUrl+"&date=2018-10-26")
     fetch(TodaysPhotoUrl + "&date=" + date)
         .then(function (response) {
@@ -51,4 +51,31 @@ export function newRegisteredUser(userObject, callback) {
         callback(response.status);
         console.dir(response);
     });
+}
+
+export function userLoggingIn(userDetails, callback) {
+    
+    fetch(apiAllUsersUrl + "/?username=" + userDetails.username)
+        .then(function (response) {
+            if (!response.ok) {
+                const errorMessage = {
+                    status: response.status,
+                    statusText: response.statusText,
+                    viesti: "No users found"
+                };
+                throw errorMessage;
+            }
+            return response.json();
+        })
+        .then(function (details) {            
+            console.log("User found:")
+            console.dir(details);
+
+            if (userDetails.password === details[0]["Password"]) {
+                callback(details);
+            }
+            else {
+                callback("Salasana väärin");
+            }
+        });
 }

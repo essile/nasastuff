@@ -6,7 +6,7 @@ import {
     Alert, Collapse
 } from 'reactstrap';
 import classnames from 'classnames';
-import { newRegisteredUser } from '../../ServiceClient';
+import { newRegisteredUser, userLoggingIn } from '../../ServiceClient';
 
 class MemberArea extends Component {
 
@@ -15,11 +15,10 @@ class MemberArea extends Component {
 
         this.toggle = this.toggle.bind(this);
         this.state = {
-            activeTab: '2',
-            successCollapse: false, 
-            regOpen: true // regopen does not work!
+            activeTab: '1',
+            failCollapse: false,
+            regOpen: true
         };
-
     }
 
     toggle(tab) {
@@ -38,10 +37,22 @@ class MemberArea extends Component {
         }.bind(this));
     }
 
+    checkUser = (u) => {
+        console.log("checking from database");
+        userLoggingIn(u, function (response) {
+            console.dir(response);
+            response === "Salasana väärin" ? this.Alert() : this.Success();
+        }.bind(this));
+    }
+
     Success = () => {
-        console.log("tassa otetaan esiin");
-        this.setState({ regOpen: false, successCollapse: true });
-        
+        this.props.history.push('/member/in');
+
+    }
+
+    Alert = () => {
+        // Showing wrong password message to the user
+        this.setState({ regOpen: false, failCollapse: true });
     }
 
     render() {
@@ -67,16 +78,16 @@ class MemberArea extends Component {
                         </NavLink>
                     </NavItem>
                 </Nav>
-                <Collapse isOpen={this.state.successCollapse}>
-                    <Alert color="success">
-                        User account created!
+                <Collapse isOpen={this.state.failCollapse}>
+                    <Alert color="danger">
+                        Wrong password!
                     </Alert>
                 </Collapse>
                 <TabContent activeTab={this.state.activeTab}>
                     <TabPane tabId="1">
                         <Row>
                             <Col sm="12">
-                                <LoginBox />
+                                <LoginBox userLogging={this.checkUser} />
                             </Col>
                         </Row>
                     </TabPane>

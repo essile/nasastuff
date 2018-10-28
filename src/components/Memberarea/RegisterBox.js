@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { AvForm, AvField } from 'availity-reactstrap-validation';
-import { Jumbotron, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Jumbotron, Button, } from 'reactstrap';
 
 class RegisterBox extends Component {
 
     state = { 
         Nickname: "", 
         Password: "",
-        Description: "",
+        // Description: "",
     }
 
     // constructor(props) {
@@ -34,7 +34,7 @@ class RegisterBox extends Component {
                     <AvField
                         id="UsernameField"
                         name="UsernameField"
-                        label="Username"
+                        label="Nick"
                         type="text"
                         value={this.state.Nickname}
                         validate={{

@@ -38,6 +38,9 @@ class NavBar extends Component {
                         <NavItem>
                             <NavLink href="/archived-photos/">Search photos</NavLink>
                         </NavItem>
+                        <NavItem>
+                            <NavLink href="/member-area">Your account</NavLink>
+                        </NavItem>
                     </Nav>
                 </Collapse>
             </Navbar>

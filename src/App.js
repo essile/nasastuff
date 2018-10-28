@@ -7,6 +7,7 @@ import NavBar from './components/Frontpage/NavBar';
 import test from './components/Frontpage/test';
 import Archived from './components/ArchivedPhotos/Archived';
 import MemberArea from './components/Memberarea/MemberArea';
+import MemberIn from './components/Memberarea/MemberIn';
 
 class App extends Component {
 
@@ -21,6 +22,7 @@ class App extends Component {
             <Route path="/archived-photos" component={Archived}></Route>
             <Route path="/test" component={test}></Route>
             <Route path="/member-area" component={MemberArea}></Route>
+            <Route path="/member/in" component={MemberIn}></Route>
           </Switch>
         </div>
       </Router>
