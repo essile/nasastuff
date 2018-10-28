@@ -7,10 +7,6 @@ class TodaysPhoto extends Component {
 
     state = { data: [], date: "" }
 
-    constructor(props) {
-        super(props);
-    }
-
     componentWillMount() {
         console.log("loading");
         this.getDate();

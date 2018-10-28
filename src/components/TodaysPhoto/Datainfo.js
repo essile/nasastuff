@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import {
-    Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, CardImgOverlay,
-    Row, Col,
+    Card, CardText, CardBody,
+    CardTitle, Row, Col,
 } from 'reactstrap';
 import MediaQuery from 'react-responsive';
 
