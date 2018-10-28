@@ -26,8 +26,7 @@ class LoginBox extends Component {
                         <Label for="Password">Password</Label>
                         <Input type="password" name="password" id="Password" placeholder="type your password" />
                     </FormGroup>
-
-                    <input type="button" value="Login" onClick={this.submitLogin}></input>
+                    <Button color="secondary" onClick={this.submitLogin}>Register</Button>{' '}
                 </Form>
             </Jumbotron>
         );

@@ -49,5 +49,6 @@ export function newRegisteredUser(userObject, callback) {
     })
     .then(function(response) {
         callback(response.status);
+        console.dir(response);
     });
 }

@@ -8,8 +8,6 @@ class RegisterBox extends Component {
         Nickname: "", 
         Password: "",
         Description: "",
-        Photo: "",
-        PasswordHash: ""
     }
 
     // constructor(props) {
