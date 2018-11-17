@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { TodayfromNasa } from '../../ServiceClient';
 import Photo from './Photo';
 import { Jumbotron } from 'reactstrap';
+import i18n from "../../i18n";
 
 class TodaysPhoto extends Component {
 
@@ -32,8 +33,9 @@ class TodaysPhoto extends Component {
         return (
             <div align="center">
                 <Jumbotron>
-                    <h3>Nasa's photo of the day</h3>
+                    <h3>{i18n.t('PotD title')}</h3>
                     <h6>{this.state.date}</h6>
+                    <small>{i18n.t('PS FI only')}</small>
                     <Photo info={this.state.data} />
                 </Jumbotron>
             </div>

@@ -2,5 +2,12 @@
     "Welcome.React": "Welcome to React and react-18next",
     "Hello": "Hello",
     "Hello.Frontpage": "Front page here, hello!",
-    "Some content": "Some content here yes yes yes"
+    "Some content": "Some content here yes yes yes",
+    "Search archived title": "Search the archived photos",
+    "Search archived paragraph": "Did you miss the photo of the day yesterday? Or are you interested in on the photo of the day when you had your last birthday? What was it when your child was born? Check it here!",
+    "Search": "Search",
+    "PS FI only": "",
+    "Today's photo":"Today's photo",
+    "Search photos":"Search photos",
+    "PotD title": "Nasa's photo of the day"
 }

@@ -2,5 +2,12 @@
     "Welcome.React": "Tervetuloa Reactiin and react-18nextiin",
     "Hello": "Terve",
     "Hello.Frontpage": "Etusivu tässä, terve!",
-    "Some content": "Jotain selitystä tässä, jee jee jee"
+    "Some content": "Jotain selitystä tässä, jee jee jee",
+    "Search archived title": "Selaile vanhoja kuvia",
+    "Search archived paragraph": "Missasitko eilisen päivän kuvan? Vai kiinnostaisiko tietää, mikä päivän kuva oli viime syntymäpäivänäsi? Entäpä lapsesi syntymäpäivänä? Selaile vanhoja kuvia täällä!", 
+    "PS FI only": "P.S. Huomaathan, että Nasalta tulevat kuvan tiedot ovat englanniksi.",
+    "Search": "Hae",
+    "Today's photo": "Päivän kuva",
+    "Search photos": "Etsi kuvia",
+    "PotD title": "Nasan päivän kuva"
 }

@@ -9,26 +9,20 @@ import {
     NavLink,
 } from 'reactstrap';
 import i18n from '../../i18n';
-import { withNamespaces } from 'react-i18next';
 
-function App({ t }) {
+function ChangeL() {
+
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng);
+        localStorage.setItem('language', lng);
     }
     return (
-        // <withNamespaces>
             <div>
                 <button onClick={() => changeLanguage('fi')}>fi</button>
                 <button onClick={() => changeLanguage('en')}>en</button>
-                {/* <h1>{t('Hello')}</h1> */}
-                {/* <p>{t('Welcome.React')}</p> */}
             </div>
-        // </withNamespaces>
     );
 };
-// export default kielitesti;
-// export default withNamespaces()(App);
-
 
 class NavBar extends Component {
 
@@ -50,15 +44,15 @@ class NavBar extends Component {
         return (
             <Navbar color="dark" dark expand="md">
                 <NavbarBrand href="/">NASA STUFF</NavbarBrand>
-                <div><App/></div>
+                <div><ChangeL/></div>
                 <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <NavLink href="/photo-today/">Today's photo</NavLink>
+                            <NavLink href="/photo-today/">{i18n.t('Today\'s photo')}</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/archived-photos/">Search photos</NavLink>
+                            <NavLink href="/archived-photos/">{i18n.t('Search photos')}</NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink href="/member-area">Your account</NavLink>
