@@ -9,6 +9,7 @@ import {
     NavLink,
 } from 'reactstrap';
 
+
 class NavBar extends Component {
 
     constructor(props) {
@@ -21,7 +22,7 @@ class NavBar extends Component {
     }
     toggle() {
         this.setState({
-            isOpen: !this.state.isOpens
+            isOpen: !this.state.isOpen
         });
     }
 
@@ -44,6 +45,7 @@ class NavBar extends Component {
                     </Nav>
                 </Collapse>
             </Navbar>
+
         );
     }
 }
