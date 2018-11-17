@@ -1,4 +1,6 @@
 {
     "Welcome.React": "Welcome to React and react-18next",
-    "Hello": "Hello"
+    "Hello": "Hello",
+    "Hello.Frontpage": "Front page here, hello!",
+    "Some content": "Some content here yes yes yes"
 }

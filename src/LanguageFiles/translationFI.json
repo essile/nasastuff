@@ -1,4 +1,6 @@
 {
     "Welcome.React": "Tervetuloa Reactiin and react-18nextiin",
-    "Hello": "Terve"
+    "Hello": "Terve",
+    "Hello.Frontpage": "Etusivu tässä, terve!",
+    "Some content": "Jotain selitystä tässä, jee jee jee"
 }

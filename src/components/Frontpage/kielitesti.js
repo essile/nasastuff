@@ -8,21 +8,14 @@ function App({ t }) {
         i18n.changeLanguage(lng);
     }
     return (
-        <withNamespaces>
-
+        // <withNamespaces>
             <div>
-                <button onClick={() => changeLanguage('fi')}>fi</button>
-                <button onClick={() => changeLanguage('en')}>en</button>
+                {/* <button onClick={() => changeLanguage('fi')}>fi</button> */}
+                {/* <button onClick={() => changeLanguage('en')}>en</button> */}
                 <h1>{t('Hello')}</h1>
-                        <p>{t('Welcome.React')}</p>
+                <p>{t('Welcome.React')}</p>
             </div>
-                {
-                    t => <div>
-                        <h1>{t('Hello')}</h1>
-                        <p>{t('Welcome.React')}</p>
-                    </div>
-                }
-        </withNamespaces>
+        // </withNamespaces>
     );
 };
 // export default kielitesti;
