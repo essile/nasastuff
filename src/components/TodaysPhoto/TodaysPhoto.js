@@ -28,14 +28,13 @@ class TodaysPhoto extends Component {
     }
 
     render() {
-
         // console.dir(this.state.data);
         return (
             <div align="center">
                 <Jumbotron>
                     <h3>{i18n.t('PotD title')}</h3>
-                    <h6>{this.state.date}</h6>
                     <small>{i18n.t('PS FI only')}</small>
+                    {/* <h6>{this.state.date}</h6> */}
                     <Photo info={this.state.data} />
                 </Jumbotron>
             </div>

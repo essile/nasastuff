@@ -16,8 +16,8 @@ i18n
     .use(reactI18nextModule)
     .init({
         resources,
-        // lng: localStorage.getItem("language"),
-        lng: "cimode",
+        lng: localStorage.getItem("language"),
+        // lng: "cimode", // this can be used if you want to see the labels
         fallbackLng: "en",
         keySeparator: false,
         interpolation: {

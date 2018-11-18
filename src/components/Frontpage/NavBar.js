@@ -9,6 +9,8 @@ import {
     NavLink,
 } from 'reactstrap';
 import i18n from '../../i18n';
+import FinnishFlag from '../../Photos/FinnishFlag.png';
+import UKflag from '../../Photos/UKflag.png';
 
 function ChangeL() {
 
@@ -18,8 +20,10 @@ function ChangeL() {
     }
     return (
             <div>
-                <button onClick={() => changeLanguage('fi')}>fi</button>
-                <button onClick={() => changeLanguage('en')}>en</button>
+                <input type="image" onClick={() => changeLanguage('fi')} src={FinnishFlag} alt="fi"/>&nbsp;
+                <input type="image" onClick={() => changeLanguage('en')} src={UKflag} alt="en"/>
+                {/* <button onClick={() => changeLanguage('fi')}><img src={FinnishFlag}/></button> */}
+                {/* <button onClick={() => changeLanguage('en')}>en</button> */}
             </div>
     );
 };
@@ -55,7 +59,7 @@ class NavBar extends Component {
                             <NavLink href="/archived-photos/">{i18n.t('Search photos')}</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/member-area">Your account</NavLink>
+                            <NavLink href="/member-area">{i18n.t('Your account')}</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>
