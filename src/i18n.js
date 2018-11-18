@@ -16,7 +16,8 @@ i18n
     .use(reactI18nextModule)
     .init({
         resources,
-        lng: localStorage.getItem("language"),
+        // lng: localStorage.getItem("language"),
+        lng: "cimode",
         fallbackLng: "en",
         keySeparator: false,
         interpolation: {
