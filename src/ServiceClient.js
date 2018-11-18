@@ -28,9 +28,9 @@ export function ArchivedfromNasa(date, callback) {
                 const errorMessage = {
                     status: response.status,
                     statusText: response.statusText,
-                    viesti: "No valid content found from Nasa database"
+                    error: "No valid content found from Nasa database"
                 };
-                throw errorMessage;
+                return errorMessage;
             }
             return response.json();
         })
