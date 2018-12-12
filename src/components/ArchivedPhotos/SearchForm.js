@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { ArchivedfromNasa } from '../../ServiceClient';
 import SearchResults from './SearchResults';
 import i18n from '../../i18n';
+import history from '../../config/history';
 
 class SearchForm extends Component {
 
@@ -34,6 +35,8 @@ class SearchForm extends Component {
             this.setState({ data: ddd });
             console.log(this.state.data);
         }.bind(this));
+
+        history.push(`${this.state.dateGiven}`);
     }
 
     
