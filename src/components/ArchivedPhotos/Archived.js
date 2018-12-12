@@ -2,41 +2,31 @@ import React, { Component } from 'react';
 import SearchForm from './SearchForm';
 import { Jumbotron } from 'reactstrap';
 import { withNamespaces } from 'react-i18next';
+import i18n from '../../i18n';
 
-// class Archived extends Component {
-//     render() {
-//         return (
-//             <div align="center">
-//                 <Jumbotron>
-//                     <h2>Search the archived phtotos</h2>
-//                     <p>
-//                         Did you miss the photo of the day yesterday? Or are you interested
-//                         in on the photo of the day when you had your last birthday?
-//                         What was it when your child was born? Check it here!
-//                     </p>
-//                     <hr/>
-//                     <SearchForm /><br />
-//                 </Jumbotron>
-//             </div>
-//         );
-//     }
-// }
-
-// export default Archived;
-
-function Archived({ t }) {
-    return (
-        <div align="center">
-            <Jumbotron>
-                <h2>{t('Search archived title')}</h2>
+class Archived extends Component {
+    render() {
+        return (
+            <div align="center">
+                <Jumbotron>
+                <h2>{i18n.t('Search archived title')}</h2>
                 <p>
-                    {t('Search archived paragraph')}
+                    {i18n.t('Search archived paragraph')}
                 </p>
-                <small>{t('PS FI only')}</small>
+                <small>{i18n.t('PS FI only')}</small>
                 <hr />
                 <SearchForm /><br />
             </Jumbotron>
-        </div>
+            </div>
+        );
+    }
+}
+
+// export default Archived;
+
+function ArchivedFunction({ t }) {
+    return (
+        <Archived/>
     );
 }
-export default withNamespaces()(Archived);
+export default withNamespaces()(ArchivedFunction);
