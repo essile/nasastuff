@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import { ArchivedfromNasa } from '../../ServiceClient';
-import SearchResults from './SearchResults';
-import i18n from '../../i18n';
 import history from '../../config/history';
 
 class SearchForm extends Component {
 
     state = {
-        data: [],
         dateGiven: new Date(),
         yearToday: new Date().getFullYear(),
         dayToday: new Date().getDate(),
         monthToday: new Date().getMonth() + 1,
-        today: ""
+        data: [],
+        today: "",
+        value: ""
     }
 
     constructor(props) {
@@ -22,32 +20,19 @@ class SearchForm extends Component {
 
     changeDate = () => {
         var pvm = document.getElementById("ddate").value;
-        console.log("Saving the date given");
-        this.setState({ dateGiven: pvm })
+        console.log("Saving the date given " + pvm);
+        this.setState({ dateGiven: pvm, value: pvm })
+        this.sendDateToParent(pvm);
     }
 
-    searchDate = () => {
-        console.log("välitetty object:");
-        console.dir(this.state.dateGiven);
-
-        ArchivedfromNasa(this.state.dateGiven, function (ddd) {
-            console.log("välitetään tietoa");
-            this.setState({ data: ddd });
-            console.log(this.state.data);
-        }.bind(this));
-
-        history.push(`${this.state.dateGiven}`);
+    sendDateToParent = (date) => {
+        this.props.date(date);
     }
 
-    
     render() {
         return (
             <div>
-                <input id="ddate" min="1995-06-16" max={this.state.today} type="date" onChange={this.changeDate} />
-                {/* <input type="button" value="Search" onClick={this.searchDate} /> */}
-                <input type="button" value={i18n.t('Search')} onClick={this.searchDate} />                
-                <hr />
-                <SearchResults dataFromNasa={this.state.data} />
+                <input id="ddate" type="date" min="1995-06-16" max={this.state.today} onChange={this.changeDate} />
             </div>
         );
     }

@@ -20,7 +20,7 @@ export function TodayfromNasa(callback) {
 }
 
 export function ArchivedfromNasa(date, callback) {
-    console.log("etsiskellään kuvaa");
+    console.log("etsiskellään kuvaa " + date);
     // fetch(TodaysPhotoUrl+"&date=2018-10-26")
     fetch(TodaysPhotoUrl + "&date=" + date)
         .then(function (response) {
